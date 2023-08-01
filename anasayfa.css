@@ -5,16 +5,16 @@ body {
   
   .başlık{
     background-color:#77D8D8;
-    font-family: 'Times', 'Arial', sans-serif, serif;
+    font-family: Times, Arial, sans-serif, serif;
     text-align: center;
   }
   h3{
     color: #3b3b3a;
-    font-family:'Times', 'Arial Narrow', sans-serif, serif;
+    font-family:Times, Arial , sans-serif, serif;
     text-decoration: underline;
   }
   p ,dd{
-    font-family:'Times', 'Arial', sans-serif, serif;
+    font-family:Times, Arial, sans-serif, serif;
   }
 
   #kartbaşlık{
