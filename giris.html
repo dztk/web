@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sakarya Üniversitesi Web Teknolojileri Ödevi anasayfa">
+<meta name="keywords" content="giriş,login,sakarya üniversitesi ödev">
+<meta name="author" content="Deniz Toprak">
+<title>GİRİŞ YAP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="giris.css" />
+</head>
+
+
+<body>
+    <div class="login-form">
+        <form action="giriskontrol.php" method="post">
+         <h2 class="text-center">GİRİŞ</h2>
+           
+        <div class="form-group">
+            <input type="email" class="form-control" id="Username" name="Username" placeholder="Username(Username@sakarya.edu.tr)*" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="Password" name="Password" placeholder="Password*" required="required">
+            <div class="display-4" id="hatalışifre"></div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-sm active" onclick="kontrol()">Log in</button>
+        </div> 
+        <footer class="text-danger small">please fill in the fields with *</footer> 
+        <div class="display-4 text-danger small" id="hatalı"></div>
+</form>
+    </div>
+   
+
+
+ <script>
+function kontrol()
+{ 
+  if(username!="b211200026@sakarya.edu.tr" || password!="b211200026")
+  {
+      document.getElementById("hatalı").innerHTML= "you entered the wrong username or password";
+  }
+  else{}
+  }
+
+ </script>   
+</body>
+</html>                
