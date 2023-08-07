@@ -1,0 +1,21 @@
+body  {
+  background-color:#EFF3C6 ;
+}
+
+span{
+    color: red;
+    font-size:smaller;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+label{
+    color:black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+footer{
+	text-align: end;
+	padding-right:20px;
+  }
+  
+ 
