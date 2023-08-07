@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>İletişim | Deniz Toprak</title>
+   <meta charset="utf-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Sakarya Üniversitesi Web Teknolojileri Ödevi anasayfa">
+   <meta name="keywords" content="iletişim,form,sakarya üniversitesi ödev">
+   <meta name="author" content="Deniz Toprak">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+    <!--navbar menü-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="iletisim.css" > 
+   
+    
+</head>
+
+<body>
+<div><!--navbar menü-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-info  menü">
+            <div class="container-fluid">
+                <a class="navbar-brand disabled text-white">DENİZ TOPRAK</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="index.html" class="nav-item nav-link  text-white-50">ANA SAYFA</a>
+                        <a href="sehrim.html" class="nav-item nav-link text-white-50">ŞEHRİM VE MİRASIMIZ</a>
+                        <a href="CV.html" class="nav-item nav-link text-white-50 ">ÖZGEÇMİŞİM</a>
+                        <a href="ilgiAlanlarım.html" class="nav-item nav-link text-white-50">İLGİ ALANLARIM</a>                    
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                        <a href="iletisim.html" class="nav-item nav-link text-white-50 active" tabindex="-1">İLETİŞİM</a>
+                        <a href="giris.html" class="nav-item nav-link text-white-50">GİRİŞ YAP</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+</div>
+
+
+
+<div class="container mt-4">
+        <div class="bg-white text-black text-center py-3 ">
+             <h2>İLETİŞİM SAYFASI</h2>
+        </div>
+        <div class="row"
+            <div class="col-md-6 col-sm-12" > <!-- orta boyutlu ekran 6 parça küçük ekran 12 yani tam ekran. id app ile vue çalışacak-->
+                <form action="iletisim.php" method="post" name="bilgi" onsubmit="return kontrol()" ><!--form name bilgi-->
+                    <div class="card mt-4">
+                        <div class="card-body p-3 ">
+                            <div class="form-group"><!--kullanıcı adı-->
+                                <div class="mb-2">
+                                    <label>Kullanıcı Adınız:</label>                         
+                                    <input type="text" class="form-control" value="" name="kullanici" id="username" onfocus="odaklan(this.id)" onblur="odaklanma(this.id,this.value)" autocomplete="off">
+                                    <span class="hata"></span>
+                                </div>
+                            </div>
+                            <div class="form-group"><!--mail-->
+                                <div class="mb-2">
+                                    <label>E-Posta:</label>
+                                    <input type="text" class="form-control" value=""  name="mail" id="mail" onfocus="odaklan(this.id)" onblur="odaklanma(this.id,this.value)" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" autocomplete="off">
+                                    <span class="hata"></span>
+                                </div>
+                            </div>
+                            <div class="form-group"><!--telefon-->
+                                <div class="mb-2">
+                                    <label>Telefon:</label>
+                                    <input type="tel" class="form-control" value=""  name="telefon" id="phone" placeholder="5xxxxxxxxx" onfocus="odaklan(this.id)" onblur="odaklanma(this.id,this.value)" autocomplete="off">
+                                    <span class="hata"></span>
+                                </div>
+                            </div>
+                            <div class="form-group"><!--doğum tarihi-->
+                                <label>Doğum Tarihiniz:</label>
+                                <input type="date" class="form-control" value="Doğum Tarihiniz"  name="tarih" id="tarih" onfocus="odaklan(this.id)" onblur="odaklanma(this.id,this.value)"> 
+                                <span class="hata"></span>
+                            </div>
+                            <div class="form-group"><!--şehir-->
+                                <label>Yaşadığınız Şehir</label>
+                                <select class="form-control" id="iller" name="iller[]" value="" onfocus="odaklan(this.id)" onblur="odaklanma(this.id,this.value)">
+                                 <option value=""></option>
+                                 <option value="1">Adana</option>
+                                 <option value="2">Adıyaman</option>
+                                 <option value="3">Afyonkarahisar</option>
+                                 <option value="4">Ağrı</option>
+                                 <option value="5">Amasya</option>
+                                 <option value="6">Ankara</option>
+                                 <option value="7">Antalya</option>
+                                 <option value="8">Artvin</option>
+                                 <option value="9">Aydın</option>
+                                 <option value="10">Balıkesir</option>
+                                 <option value="11">Bilecik</option>
+                                 <option value="12">Bingöl</option>
+                                 <option value="13">Bitlis</option>
+                                 <option value="14">Bolu</option>
+                                 <option value="15">Burdur</option>
+                                 <option value="16">Bursa</option>
+                                 <option value="17">Çanakkale</option>
+                                 <option value="18">Çankırı</option>
+                                 <option value="19">Çorum</option>
+                                 <option value="20">Denizli</option>
+                                 <option value="21">Diyarbakır</option>
+                                 <option value="22">Edirne</option>
+                                 <option value="23">Elazığ</option>
+                                 <option value="24">Erzincan</option>
+                                 <option value="25">Erzurum</option>
+                                 <option value="26">Eskişehir</option>
+                                 <option value="27">Gaziantep</option>
+                                 <option value="28">Giresun</option>
+                                 <option value="29">Gümüşhane</option>
+                                 <option value="30">Hakkâri</option>
+                                 <option value="31">Hatay</option>
+                                 <option value="32">Isparta</option>
+                                 <option value="33">Mersin</option>
+                                 <option value="34">İstanbul </option>
+                                 <option value="35">İzmir</option>
+                                 <option value="36">Kars</option>
+                                 <option value="37">Kastamonu</option>
+                                 <option value="38">Kayseri</option>
+                                 <option value="39">Kırklareli</option>
+                                 <option value="40">Kırşehir</option>
+                                 <option value="41">Kocaeli</option>
+                                 <option value="42">Konya</option>
+                                 <option value="43">Kütahya</option>
+                                 <option value="44">Malatya</option>
+                                 <option value="45">Manisa</option>
+                                 <option value="46">Kahramanmaraş</option>
+                                 <option value="47">Mardin</option>
+                                 <option value="48">Muğla</option>
+                                 <option value="49">Muş</option>
+                                 <option value="50">Nevşehir</option>
+                                 <option value="51">Niğde</option>
+                                 <option value="52">Ordu</option>
+                                 <option value="53">Rize</option>
+                                 <option value="54">Sakarya</option>
+                                 <option value="55">Samsun</option>
+                                 <option value="56">Siirt</option>
+                                 <option value="57">Sinop</option>
+                                 <option value="58">Sivas</option>
+                                 <option value="59">Tekirdağ</option>
+                                 <option value="60">Tokat</option>
+                                 <option value="61">Trabzon</option>
+                                 <option value="62">Tunceli</option>
+                                 <option value="63">Şanlıurfa</option>
+                                 <option value="64">Uşak</option>
+                                 <option value="65">Van</option>
+                                 <option value="66">Yozgat</option>
+                                 <option value="67">Zonguldak</option>
+                                 <option value="68">Aksaray</option>
+                                 <option value="69">Bayburt</option>
+                                 <option value="70">Karaman</option>
+                                 <option value="71">Kırıkkale</option>
+                                 <option value="72">Batman</option>
+                                 <option value="73">Şırnak</option>
+                                 <option value="74">Bartın</option>
+                                 <option value="75">Ardahan</option>
+                                 <option value="76">Iğdır</option>
+                                 <option value="77">Yalova</option>
+                                 <option value="78">Karabük</option>
+                                 <option value="79">Kilis</option>
+                                 <option value="80">Osmaniye</option>
+                                 <option value="81">Düzce</option>                           
+                                      
+                                  </select>
+                            </div>
+                            <div class="form-group"><!--mesaj-->
+                                <div class="mb-2">
+                                    <label>Mesajınız:</label>
+                                    <textarea class="form-control" value="" name="mesaj" id="message" rows="3" onfocus="odaklan(this.id)" onblur="odaklanma(this.id,this.value)"></textarea>
+                                    <span class="hata"></span>
+                                 </div>
+                            </div> 
+                            <div class="form-group"><!--cinsiyet-->
+                                <label>Cinsiyetiniz:</label>
+                                Kadın <input type="radio" name="cinsiyet" id="kadin" value="kadın" > 
+                                Erkek <input type="radio" name="cinsiyet" id="erkek" value="erkek"> 
+                            </div>
+                            <div class="form-group ">  <!--nereden duydunuz-->
+                                <div><label>Bizi nerden duydunuz:</label></div>
+                                <input type="checkbox" name="haber[]" id="kanal1" value="sosyalmedya" style="margin-right:15px ;">Sosyal medya<br>
+                                <input type="checkbox" name="haber[]"id="kanal2" value="cevrem" style="margin-right:15px ;">Çevrem<br>
+                                <input type="checkbox" name="haber[]" id="kanal3" value="internet" style="margin-right:15px ;">İnternet<br>
+                                <input type="checkbox" name="haber[]" id="kanal4" value="reklam" style="margin-right:15px ;">Reklam<br>
+                                <input type="checkbox" name="haber[]" id="kanal5" value="diger" style="margin-right:15px ;">Diğer<br>
+
+                            </div>
+                            <div class="form-group"><!--dosya al-->
+                                <label>Eklemek İstediğiniz Dosya:</label>
+                                <input type="file" class="form-control-file" name="resimekle" id="resimekle" value="" multiple >
+                            </div>
+                            <br>
+                            <div class="text-center"><!--js buton-->
+							    <input type="reset" value="SİL" class="btn btn-danger btn-block">
+                                <input type="submit" value="GÖNDER"class="btn btn-success btn-block" >
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<footer class="bg-info text-white-50">
+   
+        <small><i>&copy 2023 Telif Hakları Saklıdır<br> deniz toprak</i></small>
+     
+</footer>
+
+ 
+<script type="text/javascript">
+        function odaklan(x)//odaklan adlı fonksiyon değer dolu olduğunda yazı siyah arkaplan beyaz, imleç üstündeykende
+          {
+              if(x == "username" || x == "mail" || x=="phone" || x=="message"|| x=="tarih"||x=="resimekle"|| x=="iller")
+              {
+                  document.getElementById(x).style.background="#FDFEFE";
+                  document.getElementById(x).style.color="black";
+    
+              }
+              else{ }
+    
+          }
+       
+        function odaklanma(x,y) //onblur kutucuğa tıkladın sonra imleç başka yere tıkladı
+          {
+              if( y == "")
+              {
+                  document.getElementById(x).style.background="#dddd";
+                  document.getElementById(x).style.color="black";
+    
+              }
+              else{}
+    
+          }
+       
+        function kontrol() //js ile değerleri kontrol etme
+        {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+             if( document.bilgi.kullanici.value == "" || document.bilgi.kullanici.value == null ) {
+         alert( "Lütfen kullanıcı adını giriniz!" );
+         return false;
+      }
+             if( document.bilgi.mail.value == ""|| document.bilgi.mail.value == null ) {
+         alert( "Lütfen mail adresini giriniz!" );
+         return false;
+      }
+             if (mailformat.test(document.getElementById("mail").value)==false)
+      {
+        alert( "Lütfen mail adresini doğru giriniz!" );
+         return false;
+     }
+             if( document.bilgi.tarih.value == "" || document.bilgi.tarih.value == null ) {
+         alert( "Lütfen doğum tarihinizi girin!" );
+         return false;
+      }
+             if( document.bilgi.telefon.value == "" || document.bilgi.telefon.value == null || isNaN( document.bilgi.telefon.value ) ||
+                document.bilgi.telefon.value.length!=10 ) {
+         
+         alert( "Lütfen telefon numaranızı istenilen şekilde girin" );
+         return false;
+      }
+             if( document.bilgi.iller.value == "" ||document.bilgi.iller.value == null ) {
+         alert( "Lütfen yaşadığınız ili girin!" );
+         return false;
+      }
+             if( document.bilgi.mesaj.value == ""|| document.bilgi.mesaj.value == null ) {
+         alert( "Lütfen mesajınızı girin!" );
+         return false;
+      }
+             if(document.getElementById('kadin').checked == false && document.getElementById('erkek').checked == false) //kadın veya erkek işaretlenmiş kontrol
+       {
+         alert( "Lütfen cinsiyetini belirtin" );
+         return false;
+      }
+             if( document.getElementById('kanal1').checked == false && document.getElementById('kanal2').checked == false && document.getElementById('kanal3').checked == false &&
+             document.getElementById('kanal4').checked == false && document.getElementById('kanal5').checked == false)//haber kanal kontrol
+       {
+         alert( "Lütfen bizi nereden duyduğunuzu belirtin" );
+         return false;
+       }
+	   // dosya eklmeyi zorunlu tutmadım fakat örnek= if(document.getElementById("resimekle").files.length === 0) {alert( "Lütfen dosya ekleyin!" );return false;}
+            
+              else{ 
+			  alert("İşlem Başarılı")
+			  }
+        }
+</script> 
+
+
+
+
+</body>
+</html>
+  
+           
